@@ -190,8 +190,14 @@ Create a CSS file as `public/css/navbar.css`
 In `navbar.css`, Write your CSS as you want.
 ```css
 nav ul {
+    list-style: none;
     padding: 23px;
     display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    font-weight: 600;
 }
 ```
 
