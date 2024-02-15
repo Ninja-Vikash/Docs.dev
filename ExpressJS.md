@@ -238,7 +238,7 @@ In `navbar.ejs`
 ### Passing value in EJS
 ```html
 <body>
-    <%- include('navbar', {'nav-item': 'Blog'}) %>
+    <%- include('navbar', {'navItem': 'Blog'}) %>
 </body>
 ```
 In `navbar.ejs`
@@ -248,7 +248,7 @@ In `navbar.ejs`
         <li>Home</li>
         <li>About</li>
         <li>Contact</li>
-        <li><%= nav-item %></li>
+        <li><%= navItem %></li>
     </ul>
 </nav>
 ```
