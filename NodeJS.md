@@ -1,5 +1,6 @@
 # NodeJS
 ### What is NodeJS?
+<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/nodejs.png" height="95px" align="left">
 
 **NodeJS** is an open-source, cross-platform JavaScript runtime built on the V8 engine. It enables developers to execute JavaScript code outside of a web browser, making it ideal for server-side scripting and building scalable network applications. Known for its asynchronous and event-driven architecture, Node.js allows for non-blocking code execution and is widely used for developing web servers, APIs, and real-time applications. Its single programming language, fast execution speed, vast package ecosystem (**NPM**), and active community support contribute to its popularity in the development community.
 
