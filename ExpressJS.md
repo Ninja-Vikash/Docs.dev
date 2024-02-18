@@ -252,3 +252,5 @@ In `navbar.ejs`
     </ul>
 </nav>
 ```
+
+**Happy Coding**

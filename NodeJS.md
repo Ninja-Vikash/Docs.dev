@@ -86,3 +86,6 @@ Preview your app using `nodemon`
 npm run dev
 ```
 > Before initializing install nodemon
+
+
+**Happy Coding**
