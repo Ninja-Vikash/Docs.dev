@@ -9,11 +9,14 @@ The main feature of this library is that, unlike other CSS frameworks like **Boo
 matching.
 
 ---
+
 ### Get Started!
 
 Tailwind CSS works by scanning all of your HTML files, Javascript components, and any other templates for class names, generating the corresponding styles, and then writing them to a static CSS file.
 
 It's fast, flexible, and reliable - with zero runtime.
+
+---
 
 ### Installation
 Create a directory for your project.
@@ -31,7 +34,7 @@ Or it can open manually.
 
 **Now in VS code terminal window**
 
-To install
+To install tailwind
 ```bash
 npm install -D tailwindcss
 ```
@@ -39,35 +42,29 @@ To create `tailwind.config.js`
 ```bash
 npx tailwindcss init
 ```
-In `tailwind.config.js`
-```js
-content : ["./src/**/*.{html,js}"]
-```
-If you are going to write only HTML, <br> You can go with
-```js
-content : ["./src/**/*.html"]
-```
-Create a folder inside your main directory `./src`. Using the given command or manually.
-```cmd
-mkdir "src"
-```
-Create a css file inside css directory as `./src/css/input.css`
 
-In `input.css`
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-Now run this command
+### Quick Deployment Mode
+**Create  `./main.js`** & **Initialize your project as nodejs project using the command**
 ```bash
-npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch
+npm init -y
 ```
-for creating `output.css`
+Paste this given code in your `main.js`
+```js
+const fs = require("fs");
+const path = require("path");
 
-Create `index.html` inside the src directory. Paste this boilerplate.
-```html
-<!DOCTYPE html>
+// --------------------- CODE FOR DIRECTORY CREATING --------------------------
+
+fs.mkdir(path.join(__dirname, "src"), () => {
+    console.log("src directory created");
+});
+fs.mkdir(path.join(__dirname, "src/css"), () => {
+    console.log("css directiry created");
+});
+
+// -------------------- CODE FOR HTML WRITING -----------------------
+
+const HTMLFile = `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -79,5 +76,47 @@ Create `index.html` inside the src directory. Paste this boilerplate.
   <h2 class="text-xl text-center">Ninja Vikash</h2>
 </body>
 </html>
+`;
+fs.writeFile("./src/index.html", HTMLFile, () => {
+console.log("html file created");
+});
+
+// -------------------- CODE FOR CSS WRITING --------------------------
+
+const inputCSS =`@tailwind base;
+@tailwind components;
+@tailwind utilities;
+`
+
+fs.writeFile("./src/css/input.css", inputCSS, () => {
+    console.log("css file created");
+});
+
+// --------------------- CODE FOR CONFIG UPDATE -------------------------
+
+const configContent =`/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content : ["./src/**/*.html"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+`
+
+fs.writeFile("tailwind.config.js", configContent, ()=>{
+    console.log("config updated!")
+})
 ```
+Run this commmand for completing Deployment
+```bash
+node main.js
+```
+
+Finally run this command for creating an static css file
+```bash
+npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch
+```
+for creating `output.css`
+
 **Happy Coding**
