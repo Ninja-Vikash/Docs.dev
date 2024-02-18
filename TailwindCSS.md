@@ -1,15 +1,17 @@
 # Tailwind CSS
 ### What is Tailwind CSS?
 
-Tailwind CSS is an open source **CSS framework**.
+Tailwind CSS is an open-source **CSS framework**.
 
-The main feature of this library is that, unlike other CSS frameworks like **Bootstarp**, It does not provide a series of predefined classes for elements such as buttons or tables. Instead, It creates a list of **utility** CSS classes that can be used to style each element by mixing and
+<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/tailwind.png" height="80px" width="80px" align="left">
+
+The main feature of this library is that, unlike other CSS frameworks like **Bootstrap**, It does not provide a series of predefined classes for elements such as buttons or tables. Instead, It creates a list of **utility** CSS classes that can be used to style each element by mixing and
 matching.
 
 ---
-### Get Started
+### Get Started!
 
-Tailwind CSS works by scanning all of your HTML files, Javascript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.
+Tailwind CSS works by scanning all of your HTML files, Javascript components, and any other templates for class names, generating the corresponding styles, and then writing them to a static CSS file.
 
 It's fast, flexible, and reliable - with zero runtime.
 
@@ -25,7 +27,7 @@ cd './myapp'
 ```bash
 code .
 ```
-Or can open manually.
+Or it can open manually.
 
 **Now in VS code terminal window**
 
@@ -63,7 +65,7 @@ npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch
 ```
 for creating `output.css`
 
-Create `index.html` inside src directory. And paste this boiler plate.
+Create `index.html` inside the src directory. Paste this boilerplate.
 ```html
 <!DOCTYPE html>
 <html>
