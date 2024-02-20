@@ -17,11 +17,14 @@ Make a directory for your project. or
 Skip these commands if you have already created a directory.
 
 **To create directory**
-```bash
+```cmd
 mkdir "myapp"
 ```
 **Open in VS Code** your current directory. Using the command line
-```bash
+```cmd
+cd './myapp'
+```
+```cmd
 code .
 ```
 Or you can open it manually.
@@ -51,7 +54,7 @@ Make sure you have installed **nodemon** in machine globally.
 
 **Create `main.js`**
 
-`main.js`
+Paste in `main.js`
 ```js
 const fs = require("fs");
 const path = require("path");
