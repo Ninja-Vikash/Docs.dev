@@ -26,6 +26,10 @@ code .
 ```
 Or you can open it manually.
 
+**Initialize your project as npm project**
+```bash
+npm init -y
+```
 **Install ExpressJS**
 ```bash
 npm install express@4
@@ -35,12 +39,6 @@ npm install express@4
 npm install ejs
 ```
 Make sure you have installed **nodemon** in machine globally.
-
-
-**Now initialize your project as npm project**
-```bash
-npm init -y
-```
 
 **Update script in `package.json`**
 ```json
@@ -52,6 +50,7 @@ npm init -y
 ```
 
 **Create `main.js`**
+
 `main.js`
 ```js
 const fs = require("fs");
@@ -63,10 +62,10 @@ fs.mkdir(path.join(__dirname, "views"), () => {
    console.log("views created!");
 });
 fs.mkdir(path.join(__dirname, "public"), () => {
-    console.log("views created!");
+    console.log("public created!");
  });
  fs.mkdir(path.join(__dirname, "public/css"), () => {
-    console.log("views created!");
+    console.log("public/css created!");
  });
 
 // --------------------------------------------- Code for creating index.js --------------------------------------
@@ -179,5 +178,7 @@ npm run dev
 ```
 
 Click the link to open your server [localhost:3000](http://localhost:3000)
+
+You can delete your `main.js` file after deployment.
 
 **Happy Coding!**
