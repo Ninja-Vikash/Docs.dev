@@ -24,7 +24,7 @@ ExpressJS have been created. & We need to just use it.
 ## Creating a server using ExpressJS
 **Command for installing ExpressJS**
 ```bash
-npm install express
+npm install express@4
 ```
 
 **Command for installing nodemon**
@@ -112,12 +112,26 @@ app.listen(port, () => {
 In Express.js, a template engine is a tool that helps create dynamic web pages by combining static HTML templates with data. It allows developers to insert variables and logic into templates, which are then replaced with actual content when a user accesses a web page. This helps in separating code and design concerns, making it easier to manage and maintain web applications in Express.js. Examples of template engines include Pug, EJS, and Handlebars.
 
 ### Setup for EJS
-
-Create a ExpressJS project as above.
+**Install ExpressJS**
+```bash
+npm install express@4
+```
 
 **Command for installing EJS**
 ```bash
 npm install ejs
+```
+
+**Command for initialize**
+```bash
+npm init -y
+```
+**Update package.json**
+```json
+"scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+  },
 ```
 
 In `index.js`
@@ -156,7 +170,7 @@ app.listen(port, () => {
 ```
 ---
 ### Creating components in EJS
-Create a component `view/navbar.ejs`
+Create a component `views/navbar.ejs`
 
 In `navbar.ejs`
 ```html
