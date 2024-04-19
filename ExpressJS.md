@@ -1,14 +1,14 @@
-# ExpressJS
-### What is ExpressJS?
+# express.js
+### What is express.js?
 
 <img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="120px" align="left">
 
-ExpressJS is a Web framework, Which is developed to create websites.
+express.js is a Web framework, Which is developed to create websites.
 
 **Why we use it?** <br>
-In NodeJs there is http package. <br>
+In node.js there is http package. <br>
 But there is some limited capabilities in http package.
-- Here you can't serve static files.
+- In node.js, You can't serve static files.
 - You have to impliment security from the beginning.
 
 How many times, you will write how much code. After creating server. How will you manage everything.
@@ -17,12 +17,12 @@ How many times, you will write how much code. After creating server. How will yo
 
 **To simply everything**
 
-ExpressJS have been created. & We need to just use it.
+express.js come into live & We need to use it.
 
 ---
 
-## Creating a server using ExpressJS
-**Command for installing ExpressJS**
+### Creating a server in express.js
+**Command for installing express.js**
 ```bash
 npm install express@4
 ```
@@ -35,7 +35,7 @@ npm install nodemon
 ```bash
 npm init -y
 ```
-**Make few changes in  `package.json`**
+**Make few changes in  `package.json` for running nodemon** 
 ```json
 "scripts":{
     "start": "node index.js",
@@ -53,20 +53,24 @@ app.get('/',(req, res)=>{
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Your app is live on port ${port}`)
 });
 ```
 **Command for start server**
 ```bash
 npm run dev
 ```
+**Instead you can use**
+```bash
+npx nodemon index.js
+```
 **Open your browser and search**
 
 Click the link to open your server [localhost:3000](http://localhost:3000)
 
 ---
-### Serving an HTML file
-1. Deploy ExpressJS as above
+### Serving static files in express.js
+1. Deploy express.js as above
 2. Create a directory `public`
 3. Inside `public` create what ever you want to serve.
 
@@ -87,29 +91,30 @@ For example : You have created `public/index.html`
 </html>
 ```
 
-**Code for display your html file in server**
+**Add `app.use(express.static("public"))`**
 
 `index.js`
 ```js
 const express = require('express');
+const path = require('path')
 const app = express();
 const port = 3000
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/',(req, res)=>{
     res.send('public/index.html')
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Your app is live on port ${port}`)
 });
 ```
 ---
-## EJS | Template Engine 
+## Template Engine
 **What is Template Engine?**
 
-In Express.js, a template engine is a tool that helps create dynamic web pages by combining static HTML templates with data. It allows developers to insert variables and logic into templates, which are then replaced with actual content when a user accesses a web page. This helps in separating code and design concerns, making it easier to manage and maintain web applications in Express.js. Examples of template engines include Pug, EJS, and Handlebars.
+In express.js, a template engine is a tool that helps create dynamic web pages by combining static HTML templates with data. It allows developers to insert variables and logic into templates, which are then replaced with actual content when a user accesses a web page. This helps in separating code and design concerns, making it easier to manage and maintain web applications in Express.js. Examples of template engines include Pug, EJS, and Handlebars.
 
 ### Setup for EJS
 **Install ExpressJS**
@@ -137,19 +142,19 @@ npm init -y
 In `index.js`
 ```js
 const express = require('express')
+const path = require('path')
 const app = express()
 const port = 3000
 
-
 app.set('view engine', 'ejs')
-
+app.use(express.static(path.join(__dirname, "/public")))
 
 app.get('/', (req, res) => {
   res.render('index')
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Your app is live on port ${port}`)
 });
 ```
 **Create a file `views/index.ejs`**
