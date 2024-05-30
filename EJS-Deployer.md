@@ -31,25 +31,24 @@ npm install express ejs
 ### Magic Code ✨
 > [!IMPORTANT]\
 > Magic code is written in the Modern javascript code\
-> Make sure before running the `main.js` file, You have updated the `package.json`
+> Make sure before running the `main.js` file that you have updated the `package.json`
 > ```json
 > "type": "module",
 > ```
 ```js
 // main.js
 import fs from 'fs'
-import path from 'path'
 import chalk from 'chalk'
 
 // ----------------------------------------- Code for creating directory ---------------------------------------
 
-fs.mkdir(path.join(__dirname, "views"), () => {
+fs.mkdir("views", () => {
    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": views directory!")));
 });
-fs.mkdir(path.join(__dirname, "public"), () => {
+fs.mkdir("public", () => {
     console.log(chalk.blue("\u2713 DONE "+ chalk.white(": public directory!")));
 });
-fs.mkdir(path.join(__dirname, "public/css"), () => {
+fs.mkdir("public/css", () => {
     console.log(chalk.blue("\u2713 DONE "+ chalk.white(": public/css directory!")));
 });
 
@@ -146,7 +145,6 @@ nav ul li {
 }`
 
 fs.writeFile("public/css/navbar.css", NavbarCSS, ()=>{
-    console.log("navbar.css has been deployed!")
     console.log(chalk.blue("\u2713 DONE "+ chalk.white(": navbar.css file!")));
 })
 
@@ -154,10 +152,12 @@ setTimeout(() => {
   console.log(chalk.green("\u2713 Start working with your file!"))
 }, 500);
 ```
-Now run the command line for complete setup
-```bash
-node main.js
-```
+> [!IMPORTANT]\
+> Now run the command line for complete setup
+> ```bash
+> node main.js
+> ```
+> Revert the `package.json` file and change the `"type" : "commonjs"`
 
 #### Start server
 ```bash
