@@ -1,7 +1,7 @@
 # Express.js
 ### What is express.js?
 
-<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="120px" align="left">
+<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="50px" align="left">
 
 Express.js is a framework built on top of Node.js. It's like having building blocks (Node.js) and using them to create a pre-made structure (Express.js) to simplify building a house (your web application).
 
@@ -33,7 +33,7 @@ npm install nodemon
 #### Set up a basic server using express
 > [!IMPORTANT]\
 > Change the name of main file in `package.json`\
-> `main.js` to `app.js`
+> `index.js` to `app.js`
 ```js
 // app.js
 const express = require("express");
