@@ -1,95 +1,75 @@
-# ExpressJS + EJS Deployer
-### What is ExpressJS?
+## Express with EJS template Quick Setup
+Are you facing problem to write or build the basic structure of an express app with EJS template.<br/>
+You are in the right place.<br/>
 
-<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="110px" align="left">
+**Save your valuable time** <br/>
+By following the steps
 
-ExpressJS is a Web framework, Which is developed to create websites.
+# Quick Start 🚀
+Create a directory where you want to keep all of your code.<br/>
+You can create manually and open it in VS code or Using given Commands line by line
 
-**This repo will help you to deploy EJS in ExpressJS**
-
-Just follow the steps.
-
----
-
-### EJS Deployment
-Make a directory for your project. or
-
-Skip these commands if you have already created a directory.
-
-**To create directory**
+Open terminal in desktop or any where you want.<br/>
 ```cmd
 mkdir "myapp"
-```
-**Open in VS Code** your current directory. Using the command line
-```cmd
 cd './myapp'
-```
-```cmd
 code .
 ```
-Or you can open it manually.
-
-**Initialize your project as npm project**
+***
+### Basic setup
+Initialize project as npm project
 ```bash
 npm init -y
 ```
-**Install ExpressJS**
+Install basic dependencies
 ```bash
-npm install express@4
+npm install express ejs
 ```
-**Install EJS**
-```bash
-npm install ejs
-```
-Make sure you have installed **nodemon** in machine globally.
+> [!WARNING]\
+> Make sure you have installed **nodemon** in your machine globally.
 
-**Update script in `package.json`**
-```json
-"scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "deploy": "node main.js"
-},
-```
-
-**Create `main.js`**
-
-Paste in `main.js`
+### Magic Code ✨
+> [!IMPORTANT]\
+> Magic code is written in the Modern javascript code\
+> Make sure before running the `main.js` file, You have updated the `package.json`
+> ```json
+> "type": "module",
+> ```
 ```js
-const fs = require("fs");
-const path = require("path");
+// main.js
+import fs from 'fs'
+import path from 'path'
+import chalk from 'chalk'
 
 // ----------------------------------------- Code for creating directory ---------------------------------------
 
 fs.mkdir(path.join(__dirname, "views"), () => {
-   console.log("views created!");
+   console.log(chalk.blue("\u2713 DONE "+ chalk.white(": views directory!")));
 });
 fs.mkdir(path.join(__dirname, "public"), () => {
-    console.log("public created!");
- });
- fs.mkdir(path.join(__dirname, "public/css"), () => {
-    console.log("public/css created!");
- });
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": public directory!")));
+});
+fs.mkdir(path.join(__dirname, "public/css"), () => {
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": public/css directory!")));
+});
 
 // --------------------------------------------- Code for creating index.js --------------------------------------
 
 const IndexJS = `const express = require('express')
+const path =  require('path')
 const app = express()
-const port = 3000
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, '/public')))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
   res.render('index')
 });
 
-app.listen(port, () => {
-  console.log('Example app listening on port 3000')
-});`
+app.listen(3000)`
 
 fs.writeFile("index.js", IndexJS , ()=>{
-    console.log("index.js has been deployed!")
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": index.js file!")));
 })
 
 // ------------------------------------------- Code for creating index.ejs ---------------------------------------
@@ -112,7 +92,7 @@ const IndexEJS = `<!DOCTYPE html>
 </html>`
 
 fs.writeFile("views/index.ejs", IndexEJS , ()=>{
-    console.log("index.ejs has been deployed!")
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": index.ejs file!")));
 })
 
 // -------------------------------------------- Code for navbar.ejs component ------------------------------------
@@ -130,7 +110,7 @@ const NavbarEJS =  `<head>
 </nav>`
 
 fs.writeFile("views/navbar.ejs", NavbarEJS, ()=>{
-    console.log("navbar.ejs has been deployed!")
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": navbar.ejs file!")));
 })
 
 // ------------------------------------------- Code for creating index.css ---------------------------------------
@@ -146,7 +126,7 @@ h1, h2 {
 }`
 
 fs.writeFile("public/css/index.css", IndexCSS, ()=>{
-    console.log("index.css has been deployed!")
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": index.css file!")));
 })
 
 // -------------------------------------------- Code for creating navbar.css --------------------------------------
@@ -167,21 +147,25 @@ nav ul li {
 
 fs.writeFile("public/css/navbar.css", NavbarCSS, ()=>{
     console.log("navbar.css has been deployed!")
+    console.log(chalk.blue("\u2713 DONE "+ chalk.white(": navbar.css file!")));
 })
-```
 
-**Now run the given command to deploy all the essentials**
+setTimeout(() => {
+  console.log(chalk.green("\u2713 Start working with your file!"))
+}, 500);
+```
+Now run the command line for complete setup
 ```bash
-npm run deploy
+node main.js
 ```
 
-**Start the server**
+#### Start server
 ```bash
-npm run dev
+npx nodemon index.js
 ```
 
-Click the link to open your server [localhost:3000](http://localhost:3000)
+Your app is live at [localhost:3000](http://localhost:3000)
 
-You can delete your `main.js` file after deployment.
+You can delete your `main.js` file after setup.
 
-**Happy Coding!**
+#### Happy Coding💖
