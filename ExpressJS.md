@@ -1,82 +1,61 @@
-# express.js
+# Express.js
 ### What is express.js?
 
-<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="120px" align="left">
+<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/expressjs.png" height="50px" align="left">
 
-express.js is a Web framework, Which is developed to create websites.
+Express.js is a framework built on top of Node.js. It's like having building blocks (Node.js) and using them to create a pre-made structure (Express.js) to simplify building a house (your web application).
 
-**Why we use it?** <br>
-In node.js there is http package. <br>
-But there is some limited capabilities in http package.
-- In node.js, You can't serve static files.
-- You have to impliment security from the beginning.
-
-How many times, you will write how much code. After creating server. How will you manage everything.
-
-**For Handling get request / post request you have to write custom code.**
-
-**To simply everything**
-
-express.js come into live & We need to use it.
+#### Why express.js is popular for web development with node.js
+- **Easier and Faster development** : Express.js provides features like routing and  middleware, which streamline how you write code for your web application. Think of it as having pre-built tools that save you time and effort.
+- **Organization** : Express.js helps structure your code in a clear way, making it easier to maintain and understand, especially for larger projects.
+- **More Features** : The Express.js framework offers additional functionalities out of the box, such as handling different HTTP requests and responses, making it easier to build web applications.
 
 ---
 
-### Creating a server in express.js
-**Command for installing express.js**
-```bash
-npm install express@4
-```
+### Set up a basic express app
+To keep all the dependencies, We will have to create a npm project which will build a `package.json` file
 
-**Command for installing nodemon**
-```bash
-npm install nodemon
-```
-**Command for initializing project as a npm project**
+CLI for `npm` initializing
 ```bash
 npm init -y
 ```
-**Make few changes in  `package.json` for running nodemon** 
-```json
-"scripts":{
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-}
+It will create a `package.json` with initial details of your project.<br/>
+
+CLI for intalling `express`
+```bash
+npm install express
 ```
-Create a `index.js`
+
+CLI for `nodemon` | If you don't have globally 
+```bash
+npm install nodemon
+```
+#### Set up a basic server using express
+> [!IMPORTANT]\
+> Change the name of main file in `package.json`\
+> `index.js` to `app.js`
 ```js
-const express = require('express');
+// app.js
+const express = require("express");
 const app = express();
-const port = 3000
 
 app.get('/',(req, res)=>{
-    res.send('Hello World')
+    res.send('Hello World!')
 });
 
-app.listen(port, () => {
-  console.log(`Your app is live on port ${port}`)
-});
+app.listen(3000)
 ```
-**Command for start server**
+CLI for starting server using nodemon
 ```bash
-npm run dev
+npx nodemon app.js
 ```
-**Instead you can use**
-```bash
-npx nodemon index.js
-```
-**Open your browser and search**
+Your app is running at [localhost:3000](http://localhost:3000)
 
-Click the link to open your server [localhost:3000](http://localhost:3000)
+***
+### Serving static files
+For serving static files we need a `public` directory which will hold all the static files<br/>
+For example a file with extension `.html`, `.css`, `.txt` is known as a static file.
 
----
-### Serving static files in express.js
-1. Deploy express.js as above
-2. Create a directory `public`
-3. Inside `public` create what ever you want to serve.
-
-For example : You have created `public/index.html`
-
-`index.html`
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -90,61 +69,38 @@ For example : You have created `public/index.html`
 </body>
 </html>
 ```
+For accessing any static file we have to define a method in express app
 
-**Add `app.use(express.static("public"))`**
-
-`index.js`
 ```js
+// app.js
 const express = require('express');
 const path = require('path')
 const app = express();
-const port = 3000
 
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/',(req, res)=>{
-    res.send('public/index.html')
+    res.send('index')
 });
 
-app.listen(port, () => {
-  console.log(`Your app is live on port ${port}`)
-});
+app.listen(3000);
 ```
 ---
-## Template Engine
-**What is Template Engine?**
+### Template Engine
 
 In express.js, a template engine is a tool that helps create dynamic web pages by combining static HTML templates with data. It allows developers to insert variables and logic into templates, which are then replaced with actual content when a user accesses a web page. This helps in separating code and design concerns, making it easier to manage and maintain web applications in Express.js. Examples of template engines include Pug, EJS, and Handlebars.
 
-### Setup for EJS
-**Install ExpressJS**
-```bash
-npm install express@4
-```
-
-**Command for installing EJS**
+### Set up a EJS template
+CLI for installing `ejs`
 ```bash
 npm install ejs
 ```
 
-**Command for initialize**
-```bash
-npm init -y
-```
-**Update package.json**
-```json
-"scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-  },
-```
-
-In `index.js`
 ```js
+// app.js
 const express = require('express')
 const path = require('path')
 const app = express()
-const port = 3000
 
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, "/public")))
@@ -153,13 +109,12 @@ app.get('/', (req, res) => {
   res.render('index')
 });
 
-app.listen(port, () => {
-  console.log(`Your app is live on port ${port}`)
-});
+app.listen(3000)
 ```
-**Create a file `views/index.ejs`**
+> [!NOTE]\
+> Make sure you have a `views` directory with a `index.ejs` file
 
-`index.ejs`
+Code of the `index.ejs`
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -174,11 +129,10 @@ app.listen(port, () => {
 </html>
 ```
 ---
-### Creating components in EJS
-Create a component `views/navbar.ejs`
-
-In `navbar.ejs`
+### Create a component
+Create a component inside views directory as `views/navbar.ejs`
 ```html
+<!-- Navbar component -->
 <nav>
     <ul>
         <li>Home</li>
@@ -187,7 +141,7 @@ In `navbar.ejs`
     </ul>
 </nav>
 ```
-In `index.ejs`
+#### Including navbar component in `index.ejs` file
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -202,12 +156,11 @@ In `index.ejs`
 </html>
 ```
 ---
-### How to add CSS in EJS
+### Adding Style Sheets 
+Place your external StyleSheet inside public directory.
 
-Create a CSS file as `public/css/navbar.css`
-
-In `navbar.css`, Write your CSS as you want.
 ```css
+/* Style Sheet */
 nav ul {
     list-style: none;
     padding: 23px;
@@ -219,28 +172,9 @@ nav ul li {
     font-weight: 600;
 }
 ```
-
-**Linking CSS file with EJS Templates**
-
-In `index.js`
-```js
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.use(express.static('public'))
-app.set('view engine', 'ejs')
-
-app.get('/', (req, res) => {
-  res.render('index')
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-});
-```
-In `navbar.ejs`
+Now link CSS file with nav component
 ```html
+<!-- StyleSheet place inside a head tag -->
 <head>
     <link rel="stylesheet" href="css/navbar.css">
 </head>
@@ -253,15 +187,36 @@ In `navbar.ejs`
     </ul>
 </nav>
 ```
----
-### Passing value in EJS
+> [!IMPORTANT]\
+> StyleSheets are static files therefore must have to tell to use it.
+```js
+// app.js
+const express = require('express')
+const path = require('path')
+const app = express()
+
+app.use(express.static(path.join(__dirname,"/public")))
+app.set('view engine', 'ejs')
+
+app.get('/', (req, res) => {
+  res.render('index')
+});
+
+app.listen(3000)
+```
+***
+
+### Dynamic rendering using EJS
+We can pass any value from parent using curly braces `{}` and in the form of an object
 ```html
+<!-- index.ejs -->
 <body>
     <%- include('navbar', {'navItem': 'Blog'}) %>
 </body>
 ```
-In `navbar.ejs`
+And receiving value using EJS syntax
 ```html
+<!-- Navbar component -->
 <nav>
     <ul>
         <li>Home</li>
@@ -272,4 +227,4 @@ In `navbar.ejs`
 </nav>
 ```
 
-**Happy Coding**
+#### Happy Coding💖
