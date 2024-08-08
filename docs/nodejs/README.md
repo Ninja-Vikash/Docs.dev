@@ -1,11 +1,10 @@
-##### Learn node.js
-## Node.js in a Nutshell
+## Docs.dev - node.js
 
-<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/nodejs.png" height="95px" align="left">
+<img src="https://github.com/Ninja-Vikash/web_assets/blob/main/icons_svg/NODEJS.svg" height="95px" align="left">
 
 **Node.js** is an open-source, cross-platform JavaScript **runtime** built on the `V8 engine`. It enables developers to execute JavaScript code outside of a web browser, making it ideal for server-side scripting and building scalable network applications. Known for its `asynchronous` and event-driven architecture, Node.js allows for non-blocking code execution and is widely used for developing **web servers**, **API**s, and real-time applications. Its single programming language, fast execution speed, vast package ecosystem (**NPM**), and active community support contribute to its popularity in the development community.
 
-### Build environment for node.js runtime
+### Build your node.js runtime environment
 **1**. Open browser and search `download nodejs`, Open official webpage.<br/>
 **2**. Choose your machine type- Windows | macOS | Source Code<br/>
 **3**. Ensure that you download the version corresponding to your system's bit architecture to ensure compatibility and optimal performance.
@@ -20,19 +19,20 @@
 > npm --version
 > ```
 
-### Create a server file using JavaScript
+### Write your first server file
 
 ```js
 // server.js
+
 console.log("Hello World!")
-console.log("Welcome to node.js environment with Ninja Vikash")
+console.log("Welcome to node.js environment with Docs.dev")
 ```
 ```bash
 node server.js
 ```
 > [!NOTE]\
-> We can run our JavaScript file using node.\
-> Once we setup `node.js` environment.
+> We can run our JavaScript file as other programming languages like C++ and Java.\
+> Once, we setup `node.js` environment in our local machine.
 
 ### Initializing your project as an npm project
 ```bash
