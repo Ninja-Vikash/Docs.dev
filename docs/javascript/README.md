@@ -5,7 +5,8 @@
 
 JavaScript is a programming language that brings web pages to life.<br/>
 It's the core technology of the web, working alongside HTML and CSS.<br/>
-While HTML structures the content and CSS styles it. JavaScript adds *interactivity* and *dynamic behaviour*.
+While HTML structures the content and CSS styles it.<br/>
+JavaScript adds *interactivity* and *dynamic behaviour*.
 
 ***
 
@@ -51,7 +52,7 @@ While HTML structures the content and CSS styles it. JavaScript adds *interactiv
 - **Frameworks and Libraries**<br/>React, Angular, Vue, and others emerged, providing powerful tools for building user interfaces.
 
 ## Creation of server-side JavaScript
-while JavaScript initially designed for the client-side, its versatility and popularity led to its expansion into server-side development.
+While JavaScript initially designed for the client-side, its versatility and popularity led to its expansion into server-side development.
 
 ### Early attempts
 - **Before Node.js**<br/>Several attempts were made to run JavaScript on the server, but they lacked widespread adoption.
@@ -66,3 +67,15 @@ while JavaScript initially designed for the client-side, its versatility and pop
 - **Package ecosystem** ( **npm** )<br/>A vast collection of reusable modules accelerated development.
 
 - **Full-Stack JavaScript**<br/>Developers could now use JavaScript for both front-end and back-end development.
+
+### Impact of Node.js
+- **Rapid growth**<br/>Node.js gained immense popularity, becoming a preferred choice for server-side development
+
+- **Diverse application**<br/>Used for web servers, real-time applications, APIs, and more.
+
+- **Ecosystem expansion**<br/>A thriving ecosystem of frameworks, libraries, and tools emerged.
+
+### Beyond Node.js
+- **Other options**<br/>While Node.js dominates the server-side JavaScript landscape, alternatives like Deno have emerged.
+
+- **Continued evolution**<br/>JavaScript and Node.js are constantly evolving, with new features and improvements enhancing their capablities.
