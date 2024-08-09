@@ -79,3 +79,52 @@ While JavaScript initially designed for the client-side, its versatility and pop
 - **Other options**<br/>While Node.js dominates the server-side JavaScript landscape, alternatives like Deno have emerged.
 
 - **Continued evolution**<br/>JavaScript and Node.js are constantly evolving, with new features and improvements enhancing their capablities.
+<br/>
+
+# You have to know!
+
+### What is the difference between a normal text file and a source code file ?
+
+Lets create a file as `test.js`
+```js
+console.log("vikash")
+```
+Inside the `test.js` file we have `console.log("vikash")` and each word has specific task or meaning on the programming.<br/>
+`console` does a specific task when the source code executed on the software.
+
+Lets create another file as `test.txt`
+```
+console.log("vikash")
+```
+
+But the main thing, which file can be executed, when we inject them into a software ( `compiler`/`interpreter` ).<br/>
+This software has a task to identify the extension of file and perform actions according to the written source code.
+
+Every programming language has a syntax to write their source code and every programming language comes with their extension.<br/>
+eg. `.js`, `.java`, `.cpp`, `.py` and so on..
+
+### Old way to New way of learning JavaScript
+
+Before node.js people runs script using a HTML file.<br/>
+They just simply create an `index.html` file and inside it they start a script tag for writing javascript.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Hello world!")
+    </script>
+</body>
+</html>
+```
+then execute it on the browser.<br/>
+Because it is hidden inside the browser.
+
+But in the recent past<br/>
+It emerged from the browser by *Ryan Dahl*.
+
+Nowadays, we can execute our JavaScript code standalone like `python`, `java`, `c++` code.
+
