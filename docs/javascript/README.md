@@ -79,7 +79,7 @@ While JavaScript initially designed for the client-side, its versatility and pop
 - **Other options**<br/>While Node.js dominates the server-side JavaScript landscape, alternatives like Deno have emerged.
 
 - **Continued evolution**<br/>JavaScript and Node.js are constantly evolving, with new features and improvements enhancing their capablities.
-<br/>
+
 
 # You have to know!
 
@@ -103,10 +103,10 @@ This software has a task to identify the extension of file and perform actions a
 Every programming language has a syntax to write their source code and every programming language comes with their extension.<br/>
 eg. `.js`, `.java`, `.cpp`, `.py` and so on..
 
-### Old way to New way of learning JavaScript
+### Old style vs New style of learning JavaScript
 
-Before node.js people runs script using a HTML file.<br/>
-They just simply create an `index.html` file and inside it they start a script tag for writing javascript.
+In early days, People runs script using a HTML file.<br/>
+They just simply create an `index.html` file and inside it they start a `<script>` tag for writing Javascript.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -120,11 +120,41 @@ They just simply create an `index.html` file and inside it they start a script t
 </body>
 </html>
 ```
-then execute it on the browser.<br/>
-Because it is hidden inside the browser.
+and executes the HTML file on the browser.<br/>
+Because JavaScript is hidden inside for a long time in the browser.
 
 But in the recent past<br/>
 It emerged from the browser by *Ryan Dahl*.
 
 Nowadays, we can execute our JavaScript code standalone like `python`, `java`, `c++` code.
 
+### Lets talk about PC configuration and Softwares to run JavaScript
+
+For running JavaScript, There is no any higher requirement. We can run our code directly on the browser.<br/>
+
+1. Directly on browser's console
+
+2. Install a runtime for JavaScript like `node.js`<br/>
+    Once you download and installing, confirm it.
+    ```bash
+    node -v
+    ```
+
+3. Install a code editor ( IDE ) like `vs code`<br/>
+    VS code is an IDE ( Integrated Development Environment ) provides multiple features like **auto indentation**, **code suggestion**, **Extension supports**, File tracking using **git** and **GitHub**, **Integrated Terminal**.
+
+### Run your first JavaScript file
+
+Create a directory where you want to store your JavaScript file, open it in vs code.
+
+Lets create a file as `test.js` and write some code
+```js
+// test.js
+
+console.log("hello world!")
+```
+
+Now look on the top of the vs code you will find Terminal, create a new terminal and execute the source file
+```bash
+node test.js
+```
