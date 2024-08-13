@@ -102,7 +102,7 @@ The above examples are not comes under the good practice.<br/>
 > [!IMPORTANT]\
 > Our main goal to write the code readable, Code readablity should be high.
 
-**Premitive data types**
+**Primitive data types**
 
 - `number` ( 198, 143, 1.45 ), Range 2^53 - 1
 - `bigint` ( trading, stock market, reddit like websites )
@@ -133,4 +133,107 @@ console.log(typeof Object())        // object
 console.log(typeof Array())         // object
 console.log(typeof String())        // string
 console.log(typeof function(){})    // functional object
+```
+
+### Conversions
+
+It is possible to convert data types in JavaScript.<br/>
+eg. `number` -> `string` | `string` -> `number` | `number` -> `boolean` | `string` -> `boolean` | `boolean` -> `string` | `boolean` -> `number`
+
+**Why we need conversion**?<br/>
+Most of the time browser returns a string value to user.
+
+Conversion will not become a problem if you know what will be the expected result after conversion.
+
+We have `Number()` for converting values in number.
+```js
+let score = "21"
+
+let scoreInNumber = Number(score)
+
+console.log(scoreInNumber)             // 21
+console.log(typeof scoreInNumber)      // number
+```
+
+**Conversion List of Number**
+| Value | Converted Value |
+| :--- | :--- |
+| `Number`("21") | 21 |
+| `Number`("21xyz") | NaN |
+| `Number`(null) | 0 |
+| `Number`(undefined) | NaN |
+| `Number`(true) | 1 |
+| `Number`(false) | 0 |
+| `Number`({ }) | NaN |
+| `Number`([ ]) | 0 |
+
+> [!IMPORTANT]\
+> JavaScript converts data type, but values may not certain.
+>
+> When JavaScript unable to convert the values into number, it returns a `NaN` ( Not a Number ).
+
+We have a `Boolean()` for converting values in boolean.
+```js
+let isLoggedIn = 0
+
+let booleanIsLoggedIn = Boolean(isLoggedIn)
+
+console.log(booleanIsLoggedIn)              // false
+console.log(typeof booleanIsLoggedIn)       // boolean
+```
+
+**Conversion List of Boolean**
+| Value | Converted Value |
+| :--- | :--- |
+| `Boolean`("") | false |
+| `Boolean`("vikash") | true |
+| `Boolean`(1) | true |
+| `Boolean`(0) | false |
+| `Boolean`(null) | false |
+| `Boolean`(undefined) | false |
+| `Boolean`({ }) | true |
+| `Boolean`([ ]) | true |
+| `Boolean`(function (){}) | true |
+
+Similarly, We have `String()` for converting values in string.
+```js
+let myString = 2
+
+let myStringValue = String(myString)
+
+console.log(myStringValue)                  // "2"              
+console.log(typeof myStringValue)           // string
+```
+
+**Conversion List of string**
+| Value | Converted Value |
+| :--- | :--- |
+| `Number`(2) | "2" |
+| `Number`(null) | "null" |
+| `Number`(undefined) | "undefined" |
+| `Number`(true) | "true" |
+| `Number`(false) | "false" |
+
+**Here are some special cases**.<br/>
+When we try to convert datatype of an object
+```js
+let myString = {}
+
+let myStringValue = String(myString)
+
+console.log(myStringValue)              // [object Object]
+console.log(typeof myStringValue)       // string
+
+console.log(`Hello${myStringValue}World`)  // Hello[object Object]World
+```
+When we try to convert datatype of an array
+```js
+let myString = []
+
+let myStringValue = String(myString)
+
+console.log(myStringValue)              // 
+console.log(typeof myStringValue)       // string
+
+console.log(`Hello${myStringValue}World`)  // HelloWorld
 ```
