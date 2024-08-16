@@ -237,3 +237,102 @@ console.log(typeof myStringValue)       // string
 
 console.log(`Hello${myStringValue}World`)  // HelloWorld
 ```
+
+### Operations
+
+Operations are used to manipulate data stored in a variable.
+```js
+let value = 3
+let negValue = -value
+
+console.log(negValue)       // -3
+```
+
+We have many types of mathematical operations to perform on the variables.<br/>
+```js
+console.log( 2 + 2 )    // 4
+console.log( 2 - 2 )    // 0
+console.log( 2 * 2 )    // 4
+console.log( 2 ** 3 )   // 8
+console.log( 2 / 2 )    // 1
+console.log( 2 % 2 )    // 0
+```
+> [NOTE]\
+> Modulas ( `%` ) operator calculates the remainder after division.\
+> eg. `5 % 2 => 1`.
+>
+> Double astrik ( `**` ) operator calculates the exponential value.\
+> eg. `3 ** 2 => 9`
+
+**Addition operator with `string`s**
+
+```js
+let str1 = "hello"
+let str2 = " vikash"
+
+let str3 = str1 + str2
+
+console.log(str3)       // hello vikash
+```
+> [NOTE]\
+> `str1 - str2` not possible 😅
+
+We have already talked about **explicit** conversion.<br/>
+```js
+let userId = "198"
+let userIdInNumber = Number(userId)
+
+console.log(userIdInNumber)         // 198
+console.log(typeof userIdInNumber)  // number
+```
+
+**Problems with implicit conversion**<br/>
+In implicit conversion `string`s are very powerful.
+```js
+console.log("1" + 2)                // 12
+console.log(1 + "2")                // 12
+console.log("1" + "2")              // 12
+
+console.log(1 + "2" + 2)            // 122
+console.log(1 + 2 + "2")            // 32
+```
+> [IMPORTANT]\
+> Until a `string` datatype appears all the numbers are treated as `number`.\
+> But once the expression get any `string` value all the rest numbers will be treated as `string`.
+
+**Writing mathematical expressions**<br/    >
+In JavaScript it is complicated to predict the result of a messy expression.
+eg. `(3 + 4 * 5 % 3)`<br/>
+There is no any certainity in the above expression. Instead we can use more parenthesis for a more certain result.
+```js
+console.log(3 + 4 * 5 % 3)          // Wrong approach to write expressions
+
+console.log((3 + (4 * 5)) % 3)      // More reliable approach to write expressions
+```
+
+Some more expressions are written as<br/>
+`+true` and `+""`
+```js
+console.log(+true)      // 1  ( Prefer not to use in programming )
+console.log(+"")        // 0  ( Prefer not to use in programming )
+```
+
+#### PostFix and PreFix operators
+PostFix and PreFix operators work on single value.
+```js
+let gameCounter = 10
+
+console.log(++gameCounter)      // 11
+console.log(gameCounter++)      // 11
+```
+Here you are thinking that both the operators did the same work but they works differently.
+
+| Value: gameCounter = 10 | Current value | Passed value |
+| :--- | :--- | :--- |
+| gameCounter | 10 | 10 |
+| ++gameCounter | 11 | 11 |
+| gameCounter++ | 11 | 12 |
+| ++gameCounter | 13 | 13 |
+| gameCounter-- | 13 | 12 |
+| --gameCounter | 11 | 11 |
+> We print only current values in the console
