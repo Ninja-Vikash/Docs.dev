@@ -274,7 +274,7 @@ let str3 = str1 + str2
 
 console.log(str3)       // hello vikash
 ```
-> [NOTE]\
+> [!NOTE]\
 > `str1 - str2` not possible 😅
 
 We have already talked about **explicit** conversion.<br/>
@@ -296,13 +296,13 @@ console.log("1" + "2")              // 12
 console.log(1 + "2" + 2)            // 122
 console.log(1 + 2 + "2")            // 32
 ```
-> [IMPORTANT]\
+> [!IMPORTANT]\
 > Until a `string` datatype appears all the numbers are treated as `number`.\
 > But once the expression get any `string` value all the rest numbers will be treated as `string`.
 
-**Writing mathematical expressions**<br/    >
+**Writing mathematical expressions**<br/>
 In JavaScript it is complicated to predict the result of a messy expression.
-eg. `(3 + 4 * 5 % 3)`<br/>
+eg. `( 3 + 4 * 5 % 3 )`<br/>
 There is no any certainity in the above expression. Instead we can use more parenthesis for a more certain result.
 ```js
 console.log(3 + 4 * 5 % 3)          // Wrong approach to write expressions
@@ -336,3 +336,64 @@ Here you are thinking that both the operators did the same work but they works d
 | gameCounter-- | 13 | 12 |
 | --gameCounter | 11 | 11 |
 > We print only current values in the console
+
+### Comparisons
+
+Comparisons are used to compare between two values or expressions.<br/>
+Comparison operators return a **boolean** value ( `true`/`false`). Most of the logic of the programming based on comparison. In conditionals ( `if-else` ) and `loop`s.
+
+List of comparisons
+```js
+console.log(2 > 4)              // false
+console.log(2 >= 4)             // false
+console.log(2 < 4)              // true
+console.log(2 <= 4)             // true
+console.log(2 == 4)             // false
+console.log(2 != 4)             // true
+```
+
+Here is an example of bad comparing practice
+```js
+console.log("2" > 1)            // true
+console.log("02" > 2)           // true
+```
+> [!WARNING]\
+> Makesure you are comparing similar datatype variable so that your result may not be unexpected.
+
+Have a look on an special type of comparison with `null` 👀
+```js
+console.log(null > 0)       // false
+console.log(null == 0)      // false
+console.log(null >= 0)      // true
+```
+An unexpected result will occur if we compare value with `null`.
+
+> [!IMPORTANT]\
+> The reason is that an equality check `==` and comparisons `>` , `<` , `>=` , `<=` work differently
+>
+> Comparisons convert null to a number, treating it as 0 that's why\
+> ( `null >= 0` ) is `true`\
+> ( `null > 0` ) is `false`
+
+Don't worry!<br/>
+Let's look the Comparison with `undefined`
+```js
+console.log(undefined == 0)     // false
+console.log(undefined > 0)      // false
+console.log(undefined < 0)      // false
+```
+
+**Strict checking**<br/>
+JavaScript can compare between two different data type variable. Due to this functionality of JavaScript, we may face unexpected error.
+```js
+console.log("3" == 3)       // true
+```
+In the above expression we are comparing an `string` data type with a `number` data type. Because traditional equlity check ( `==` ) only perform the comparison based on the value, Not data type.
+
+JavaScript should not proceed the comparison.
+To prevent this type of comparison we use strict checking.
+```js
+console.log("3" === 3)       // false
+```
+> [!NOTE]\
+> Strict checking compare between not only values but also data type of the variables.
