@@ -257,7 +257,7 @@ console.log( 2 ** 3 )   // 8
 console.log( 2 / 2 )    // 1
 console.log( 2 % 2 )    // 0
 ```
-> [NOTE]\
+> [!NOTE]\
 > Modulas ( `%` ) operator calculates the remainder after division.\
 > eg. `5 % 2 => 1`.
 >

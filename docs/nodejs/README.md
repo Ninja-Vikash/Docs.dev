@@ -4,58 +4,33 @@
 
 **Node.js** is an open-source, cross-platform JavaScript **runtime** built on the `V8 engine`. It enables developers to execute JavaScript code outside of a web browser, making it ideal for server-side scripting and building scalable network applications. Known for its `asynchronous` and event-driven architecture, Node.js allows for non-blocking code execution and is widely used for developing **web servers**, **API**s, and real-time applications. Its single programming language, fast execution speed, vast package ecosystem (**NPM**), and active community support contribute to its popularity in the development community.
 
-### Build your node.js runtime environment
-**1**. Open browser and search `download nodejs`, Open official webpage.<br/>
-**2**. Choose your machine type- Windows | macOS | Source Code<br/>
-**3**. Ensure that you download the version corresponding to your system's bit architecture to ensure compatibility and optimal performance.
+### Install `node.js` in your locale machine 
+Download `nodejs`, from official website.<br/>
+According to your machine type- Windows | macOS | Source Code<br/>
+Ensure the corresponding version of your system's bit architecture for compatibility and optimal performance.
 
-> [!NOTE]\
-> Once we setup `node.js` environment, we have the access of `npm`.
->
-> Check `node.js` and `npm` is available or not in your machine.
-> ```bash
-> node --version
->
-> npm --version
-> ```
+Once we setup `node.js`, now we can access or execute `npm` commands.
 
-### Write your first server file
+Let's confirm the `node.js` is working or not
+```bash
+# node.js version
+node --version
 
+# npm version
+npm --version`
+``` 
+
+Initially, we create and execute our JavaScript file with HTML file.<br/>
+But now it is possible to execute JavaScript file standalone like other programming languages.
+
+It opened multiple oppourtunity.
+
+### Let's create your first server side JavaScript file
+Create a blank JavaScript file ( eg. `server.js` )
 ```js
-// server.js
-
-console.log("Hello World!")
-console.log("Welcome to node.js environment with Docs.dev")
+console.log("Node.js with Docs.dev!")
 ```
-```bash
-node server.js
-```
-> [!NOTE]\
-> We can run our JavaScript file as other programming languages like C++ and Java.\
-> Once, we setup `node.js` environment in our local machine.
-
-### Initializing your project as an npm project
-```bash
-npm init
-```
-**Following Questions will be asked**<br/>
-package name : `<project-name>`<br/>
-version : `1.0.0`<br/>
-description : `<description>`<br/>
-entry point : `index.js`<br/>
-test command : <br/>
-git repository : <br/>
-keywords :<br/>
-author : `ninja-vikash`<br/>
-licence :
-
-Type `Yes` to finish the initialization.
-
-> [!NOTE]\
-> **Alternative**
-> ```bash
-> npm init -y
-> ```
+We can execute the file using node command as `node server.js`
 
 ### Creating a server using node.js
 ```js
