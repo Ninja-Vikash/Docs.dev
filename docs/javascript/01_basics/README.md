@@ -76,7 +76,7 @@ comments
 > Select the lines and `ctrl` + `/` ( `cmd` + `/` )
 
 
-### Data Types
+### Standard code and Importance of code readablity
 As we discussed to standardize the JavaScript code ECMAScript International writes standards.<br/>
 For the browser how they will treat the code
 `"use strict"`
@@ -102,10 +102,20 @@ The above examples are not comes under the good practice.<br/>
 > [!IMPORTANT]\
 > Our main goal to write the code readable, Code readablity should be high.
 
+### Data Types
+In other programming languages like `C#` and `C++`, there is a most important concept of **Call by Value** and **Call by Reference**.
+
+In the very top level data types are categorized based on how a data value will be stored in memory, and how they can be accessed by the user.
+
+Here we have two category - `Primitive` ( Call by value ) and `Reference` | Non-primitive ( Call by reference )
+
+**Call by value**: A copy of original value to be passed.<br/>
+**Call by reference**: Original value to be passed.
+
 **Primitive data types**
 
 - `number` ( 198, 143, 1.45 ), Range 2^53 - 1
-- `bigint` ( trading, stock market, reddit like websites )
+- `bigint` ( 198n ), trading, stock market, reddit like websites
 - `string` ( "vikash", 'kumar' )
 - `boolean` ( `true` / `false` )
 - `null` ( standalone value | dataType = `Object` )
@@ -125,14 +135,25 @@ List of types of data types
 ```js
 console.log(typeof "vikash")        // string
 console.log(typeof 187)             // number
+console.log(typeof 198n)            // bigint
 console.log(typeof true)            // boolean
 console.log(typeof null)            // object
-
 console.log(typeof undefined)       // undefined
+
 console.log(typeof Object())        // object
 console.log(typeof Array())         // object
 console.log(typeof String())        // string
 console.log(typeof function(){})    // functional object
+```
+
+**Symbol data type**<br/>
+A symbol in JavaScript is a unique, immutable data type that is often used to create unique identifiers for properties on objects. Unlike strings, symbols are not comparable by value, meaning two symbols created with the same description are not considered equal.
+```js
+const id = Symbol(12)
+
+const anotherId = Symbol(12)
+
+console.log(id === anotherId)       // false
 ```
 
 ### Conversions
@@ -141,7 +162,8 @@ It is possible to convert data types in JavaScript.<br/>
 eg. `number` -> `string` | `string` -> `number` | `number` -> `boolean` | `string` -> `boolean` | `boolean` -> `string` | `boolean` -> `number`
 
 **Why we need conversion**?<br/>
-Most of the time browser returns a string value to user.
+Most of the time browser returns a string value to user.<br/>
+Whenever we fetch some data from an API. ( eg. Weather API )
 
 Conversion will not become a problem if you know what will be the expected result after conversion.
 
@@ -185,7 +207,7 @@ console.log(typeof booleanIsLoggedIn)       // boolean
 **Conversion List of Boolean**
 | Value | Converted Value |
 | :--- | :--- |
-| `Boolean`("") | false |
+| `Boolean`(" ") | false |
 | `Boolean`("vikash") | true |
 | `Boolean`(1) | true |
 | `Boolean`(0) | false |
@@ -208,11 +230,11 @@ console.log(typeof myStringValue)           // string
 **Conversion List of string**
 | Value | Converted Value |
 | :--- | :--- |
-| `Number`(2) | "2" |
-| `Number`(null) | "null" |
-| `Number`(undefined) | "undefined" |
-| `Number`(true) | "true" |
-| `Number`(false) | "false" |
+| `String`(2) | "2" |
+| `String`(null) | "null" |
+| `String`(undefined) | "undefined" |
+| `String`(true) | "true" |
+| `String`(false) | "false" |
 
 **Here are some special cases**.<br/>
 When we try to convert datatype of an object
@@ -221,10 +243,10 @@ let myString = {}
 
 let myStringValue = String(myString)
 
-console.log(myStringValue)              // [object Object]
-console.log(typeof myStringValue)       // string
+console.log(myStringValue)                  // [object Object]
+console.log(typeof myStringValue)           // string
 
-console.log(`Hello${myStringValue}World`)  // Hello[object Object]World
+console.log(`Hello${myStringValue}World`)   // Hello[object Object]World
 ```
 When we try to convert datatype of an array
 ```js
@@ -232,10 +254,10 @@ let myString = []
 
 let myStringValue = String(myString)
 
-console.log(myStringValue)              // 
-console.log(typeof myStringValue)       // string
+console.log(myStringValue)                  // 
+console.log(typeof myStringValue)           // string
 
-console.log(`Hello${myStringValue}World`)  // HelloWorld
+console.log(`Hello${myStringValue}World`)   // HelloWorld
 ```
 
 ### Operations
