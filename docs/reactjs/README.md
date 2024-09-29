@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Ninja-Vikash/web_assets/blob/main/icons_svg/REACTJS.svg" height="95px" align="left">
 
-React.js is a JavaScript library used for building user interfaces, primarily for web applications. Developed and maintained by Facebook, React allows developers to create dynamic and interactive web pages with a component-based approach. Think of it as a toolkit for building modern websites and web apps that are fast, responsive, and easy to manage.
+React.js is a JavaScript library used for building user interfaces, primarily for web applications.<br/>Developed and maintained by `Facebook`, React allows developers to create dynamic and interactive web pages with a component-based approach.<br/>Think of it as a toolkit for building modern websites and web apps that are fast, responsive, and easy to manage.
 
 ***
 
