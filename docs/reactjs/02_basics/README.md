@@ -20,7 +20,7 @@ npm create vite@latest
 > framework : `React`\
 > variant : `Javascript`
 
-#### Final steps
+#### Launch your app
 ```bash
 # installing required packages ( node_module )
 npm install
@@ -30,14 +30,30 @@ npm run dev
 ```
 
 > [!NOTE]\
-> Open it in browser using `.` + `enter`
+> Open it in browser using `o` + `enter`
 
-### Overview
+### File Structure
 
-One of the most important file of any webpage, is `index.html`<br/>
-That is why in react, we also need it to render a webpage.
+<details>
+  <summary>index.html</summary>
 
-> [!IMPORTANT]\
-> *Browser doesn't understand react.* 😢
->
-> But we don't need to worry about it.
+    ```html
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite + React</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
+    </html>
+    ```
+    
+</details>
+
+If you're just starting with frontend development, you've likely come across a file named index.html. You might wonder what it is if you don’t have prior knowledge. Think of HTML as the skeleton of any website. It provides the basic structure and layout, determining how different elements like headings, paragraphs, images, and links are organized on a webpage. Without HTML, web pages would have no form or structure to build upon.
+
