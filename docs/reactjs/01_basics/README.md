@@ -147,13 +147,18 @@ So here `JSX` comes into existence and it solved all the complication with `crea
 </body>
 ```
 > [!IMPORTANT]\
-> Since react documents works with JSX but browser does not understand JSX.\
-> Therefore we need a transpiler in this case we will use **Babel** as a transpiler.
+> Browser does not understand `JSX`.\
+> It only understands HTML, CSS and JavaScript.
+
+#### Transpiling `JSX` using `Babel` to JavaScript
+**Babel** is a transpiler used to compile `JSX` code into JavaScript code.
 
 ```js
+// babel script
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
-#### Now take a look on the source code
+
+Lets include the `babel` script so that you can start writing `JSX`.
 ```html
 <body>
     <div id="app"></div>
@@ -168,8 +173,19 @@ So here `JSX` comes into existence and it solved all the complication with `crea
     </script>
 </body>
 ```
+Now the `render()` method is able to display `JSX`, pass any HTML code it is ready to render on the screen.
+> [!NOTE]\
+> Order of scripts
+> ```js
+> <script src="react.js"></script>
+> <script src="react-dom.js"></script>
+> <script src="babel.min.js"></script>
+> <script type="text/jsx">
+>     // JSX code
+> </script>
+> ```
 
-We can create a function component for rendering
+#### Rendering using a function
 ```html
 <body>
     <div id="app"></div>
@@ -184,9 +200,20 @@ We can create a function component for rendering
             return <h1>Hello React!</h1>
         }
 
-        const root = ReactDOM.createRoot(app).render(<Header/>)
+        const root = ReactDOM.createRoot(app).render(<Header />)
     </script>
 </body>
 ```
+> [!NOTE]\
+> In React, you create small blocks of component.\
+> But inside `render()` method we do not call it as a function call.
+>
+> ```jsx
+> // Wrong Approach
+> ReactDOM.createRoot(app).render(Header())
+> 
+> // Right Approach
+> ReactDOM.createRoot(app).render(<Header />)
+> ```
 
 **Happy Coding 💖**
