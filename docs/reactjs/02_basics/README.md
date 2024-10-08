@@ -82,3 +82,5 @@ npm run dev
 - `package.json`: Defines the project's dependencies, scripts, and metadata like the project name, version, and more.
 - `README.md`: Documentation file that typically includes project setup instructions.
 - `vite.config.js`: Configuration file for Vite, a fast build tool and development server used in this React project.
+
+**Happy coding ❤️**
