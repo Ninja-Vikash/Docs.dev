@@ -1,4 +1,4 @@
-## Docs.dev - react.js - Basics
+## Docs.dev - React App with Vite
 
 ### How to start?
 
@@ -31,3 +31,13 @@ npm run dev
 
 > [!NOTE]\
 > Open it in browser using `.` + `enter`
+
+### Overview
+
+One of the most important file of any webpage, is `index.html`<br/>
+That is why in react, we also need it to render a webpage.
+
+> [!IMPORTANT]\
+> *Browser doesn't understand react.* 😢
+>
+> But we don't need to worry about it.
