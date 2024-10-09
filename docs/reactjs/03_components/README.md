@@ -1,4 +1,4 @@
-## Docs.dev - React Components
+## Docs.dev - React Components and Export methods
 
 ### What is a component?
 In React, a component is a reusable, self-contained block of code that defines a part of the user interface (UI).<br/>Think of components as the building blocks of a website. Each component can be as small as a button or as large as an entire page.<br/>By combining multiple components together, you can construct complex UIs.
@@ -28,7 +28,7 @@ A component is just a function which returns `JSX` code itself.
 > ```
 
 #### Rendering a component
-Lets move to the `app.jsx`
+Lets move to the `App.jsx`
 
 ```jsx
 import React from "react";
@@ -72,7 +72,7 @@ export default ParentComponent;
 `ParentComponent.jsx` has a nested component as `<ChildComponent />` which is only accessible within `ParentComponent.jsx`.<br/>
 We can't access `<ChildComponent />` in another component.
 
-### Exporting
+### Export methods
 There are two types of modular `export`s
 - **default export**<br/>
     When a module is exported as default export then it can be accessible using any name from that file.<br/>
@@ -110,7 +110,7 @@ There are two types of modular `export`s
 > [!NOTE]\
 > Instead of `currentDate` we can import as
 > ```jsx
-> import dateFunction from "currentDate";
+> import dateFunction from "methods.js";
 > ```
 > or whatever we want to call this method.
 - **named export**<br/>
