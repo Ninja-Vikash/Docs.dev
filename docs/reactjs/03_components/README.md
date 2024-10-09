@@ -2,6 +2,8 @@
 
 ### What is a component?
 In React, a component is a reusable, self-contained block of code that defines a part of the user interface (UI).<br/>Think of components as the building blocks of a website. Each component can be as small as a button or as large as an entire page.<br/>By combining multiple components together, you can construct complex UIs.
+
+
 ![components](COMPONENT.png)
 
 #### Creating a component
@@ -18,6 +20,12 @@ export default Greet;
 ```
 
 A component is just a function which returns `JSX` code itself.
+> [!IMPORTANT]\
+> Component name must be in **Pascal** case i.e.,
+> ```jsx
+> function Greet() { ... }      // Valid component ✅
+> function greet() { ... }      // Not valid component ❎
+> ```
 
 #### Rendering a component
 Lets move to the `app.jsx`
@@ -67,7 +75,7 @@ We can't access `<ChildComponent />` in another component.
 ### Exporting
 There are two types of modular `export`s
 - **default export**<br/>
-    When a module have default export it can be accessible using any name from that file.<br/>
+    When a module is exported as default export then it can be accessible using any name from that file.<br/>
     ```js
     // methods.js
 
@@ -78,16 +86,19 @@ There are two types of modular `export`s
     export default currentDate;
     ```
 
+    Accessing the module using default export
     ```jsx
     // App.jsx
 
     import React from "react";
-    import currentDate from "currentDate";
+    import currentDate from "methods.js";
 
     function App() {
         const getDate = () => {
             const getDate = currentDate()
+            console.log(getDate)
         }
+        getDate()
 
         return (
             <div>
@@ -96,9 +107,49 @@ There are two types of modular `export`s
         )
     }
     ```
-    > [!NOTE]\
-    > Instead of `currentDate` we can import as
-    > ```jsx
-    > import dateFunction from "currentDate";
-    > ```
-    > or whatever we want to call this method.
+> [!NOTE]\
+> Instead of `currentDate` we can import as
+> ```jsx
+> import dateFunction from "currentDate";
+> ```
+> or whatever we want to call this method.
+- **named export**<br/>
+    When a module is exported as named export then it can only be accessible by its exact name.<br/>
+    ```js
+    // methods.js
+
+    const currentDate = () => {
+        // Code...
+    }
+
+    export { currentDate }
+    ```
+
+    Accessing the module using named export
+    ```js
+    // App.jsx
+
+    import React from "react";
+    import { currentDate } from "methods.js";
+
+    function App() {
+        const getDate = () => {
+            const getDate = currentDate()
+            console.log(getDate)
+        }
+        getDate()
+
+        return (
+            <div>
+                Docs.dev
+            </div>
+        )
+    }
+    ```
+> [!NOTE]\
+> We can write the named export module as
+> ```js
+> export const currentDate = () => {
+>     // Code...
+> }
+> ```
