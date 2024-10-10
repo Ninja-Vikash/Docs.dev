@@ -87,3 +87,39 @@ function App() {
 }
 ```
 Fragments don't create any additional node in DOM.
+
+### Difference between `JSX` & `HTML`
+
+JSX provides the facility of writing logic with structure.
+```html
+<!-- HTML Code -->
+<body>
+    <h2>3 + 3</h2>
+</body>
+```
+The same code we can write in react as
+```jsx
+function App() {
+    return (
+        <div>
+            <h2>3 + 3</h2>
+        </div>
+    )
+}
+```
+But if we write in `JSX` with JSX literals `{ }`
+```jsx
+function App() {
+    return (
+        <div>
+            <h2>{3 + 3}</h2>
+        </div>
+    )
+}
+```
+> [!IMPORTANT]\
+> In React, We can write `JavaScript` inside `JSX` **literals** `{ }`
+>
+> We can call `function`s and use the variables as well. 🤩
+
+**Happy coding ❤️**
