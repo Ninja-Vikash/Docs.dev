@@ -47,7 +47,7 @@ export default App;
 >
 > Instead we will use a vscode extension
 > ![extension](EXTENSION.png)
-> and we can snippets to write the boilers with very ease\
+> and it provides snippets to write the boilers with very ease\
 > `rfce` → react functional component with export
 
 #### Nested component
@@ -70,7 +70,7 @@ function ParentComponent() {
 export default ParentComponent;
 ```
 `ParentComponent.jsx` has a nested component as `<ChildComponent />` which is only accessible within `ParentComponent.jsx`.<br/>
-We can't access `<ChildComponent />` in another component.
+You can't access `<ChildComponent />` in another component.
 
 ### Export methods
 There are two types of modular `export`s
