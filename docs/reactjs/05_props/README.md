@@ -1,4 +1,4 @@
-## Docs.dev - Props
+## Docs.dev - Props & Data flow
 
 ### What is props?
 *Props are used to pass data from parent to child components.*<br/>
@@ -84,7 +84,7 @@ function App() {
 }
 ```
 
-### Props destructuring
+### Props Destructuring
 You have learned that how to pass `props`.
 
 Many of time you will have to pass more than one props.<br/>
@@ -164,5 +164,46 @@ function User({ userData }) {
             Book a meeting on {contact}.
         </h3>
     )
+}
+```
+
+### Data Flow & Prop Drilling
+![data flow](DATA_FLOW.png)
+
+> [!IMPORTANT]\
+> Data flows from top level component to nested level components.\
+> `Parent` → `Children` → `GrandChild` → `...`
+
+*Prop Drilling* is a concept of passing data to one component to other.
+
+You need to understand the data flow structure of your app.
+
+```jsx
+function App() {
+    return (
+        <>
+            <Container name="ninja" />
+        </>
+    )
+}
+```
+```jsx
+// container component
+function Container({name}) {
+    return (
+        <Greet name={name} />
+    )
+}
+
+// greet component
+function Greet({name}) {
+    return (
+        <User name={name} />
+    )
+}
+
+// user component
+function User({name}) {
+    return <h3>{name}</h3>
 }
 ```
