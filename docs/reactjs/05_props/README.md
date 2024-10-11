@@ -1,4 +1,4 @@
-## Docs.dev - Props & Data flow
+## Docs.dev - Props, Data flow & `children`
 
 ### What is props?
 *Props are used to pass data from parent to child components.*<br/>
@@ -207,3 +207,67 @@ function User({name}) {
     return <h3>{name}</h3>
 }
 ```
+
+### Children Rendering 😎
+We have learned that how can we pass props to child component.
+
+*But the component is not limited with only props passing.*<br/>
+Instead we can pass an entire component.
+
+Lets see how can we achieve it.
+```jsx
+import React from "react";
+
+function App() {
+    return <h1>Docs.dev</h1>
+}
+
+export default App;
+```
+An another component as `<Container />`
+```jsx
+function Container() {
+    return (
+        <>
+
+        </>
+    )
+}
+```
+Render it in `<App />`
+```jsx
+function App() {
+    return (
+        <Container />
+    )
+}
+```
+Instead of self closing tag. We can write the component name as traditional HTML tag.<br/>
+```jsx
+function App() {
+    return (
+        <Container></Container>
+    )
+}
+```
+And inside the tag we can write `JSX` code. 🤓
+```jsx
+function App() {
+    return (
+        <Container>
+            <h2>Docs.dev - React</h2>
+        </Container>
+    )
+}
+```
+This inner `JSX` known as `children` props and can be accessible using `children` keyword.
+```jsx
+function Container({ children }){
+    return (
+        <>
+            {children}
+        </>
+    )
+}
+```
+**Amazing!** 😍
