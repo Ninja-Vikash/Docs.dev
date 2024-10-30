@@ -164,6 +164,7 @@ function App() {
         <>
             {userData.map((user, index) => (
                 <User
+                    key={index}
                     user={{
                         name: user.name,
                         role: user.role,
