@@ -24,7 +24,16 @@ npm create vite@latest
 > npm create vite@latest .
 > ```
 > 
-> Select the framework  `( react )` and language `( javascript )` you want to work.
+> Select the framework  `( react )` and language `( javascript )` you are going to work on.
+> ```bash
+> # Install dependencies
+> npm install
+>
+> # Start server
+> npm run dev
+
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
+
+**Let's dive in... 😋**
