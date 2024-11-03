@@ -39,6 +39,7 @@ const darkMode = createTheme({
 ```jsx
 // App.jsx
 import React from "react";
+import { Box } from "@mui/material";
 
 function App() {
   return <Box></Box>;
@@ -123,6 +124,8 @@ Use the `<Header />` component
 
 ```jsx
 import React from "react";
+import { Box } from "@mui/material";
+import Header from "./components/Header.jsx";
 
 function App() {
   return (
@@ -139,6 +142,8 @@ Declare theme state and toggler
 
 ```jsx
 import React, { useState } from "react";
+import { Box } from "@mui/material";
+import Header from "./components/Header.jsx";
 
 function App() {
   // theme state
@@ -160,8 +165,9 @@ Wrap the code using `<ThemeProvider>` and import `lightTheme` & `darkTheme`
 
 ```jsx
 import React, { useState } from "react";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { darkMode, lightMode } from "./theme";
+import Header from "./components/Header.jsx";
 
 function App() {
   // theme state
