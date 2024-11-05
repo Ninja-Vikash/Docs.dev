@@ -1,4 +1,4 @@
-## Docs.dev - React App with Vite
+## Docs.dev - React App with Vite & Professional setup 🔥
 
 ### How to start?
 
@@ -82,5 +82,35 @@ npm run dev
 - `package.json`: Defines the project's dependencies, scripts, and metadata like the project name, version, and more.
 - `README.md`: Documentation file that typically includes project setup instructions.
 - `vite.config.js`: Configuration file for Vite, a fast build tool and development server used in this React project.
+
+### Professional folder structure
+
+Folder structure plays a most important role in any react app.<br/>
+An organized setup will boost the productivity.
+
+**Lets go!**<br/>
+Build your ultimate folder structure
+```bash
+# open src
+cd src
+
+# create folders at src
+mkdir assets components contexts data pages services utils
+
+# create folders at components
+cd components
+
+mkdir container ui
+
+# create folders for pages
+cd ..
+
+cd pages
+
+mkdir home about features contact error
+```
+> [!IMPORTANT]\
+> **learn more**\
+> Checkout `project`
 
 **Happy coding ❤️**
