@@ -226,5 +226,35 @@ function Header({ toggleTheme }) {
   );
 }
 ```
+***
 
-**Amazing 🔥**
+### Preserving theme on reload 🔥
+
+By modifying and adding few lines you can preserve the existing theme across the reloads.
+
+```jsx
+function App() {
+  // theme state
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
+
+  // theme toggler
+  const toggleTheme = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+  };
+
+  return (
+    <ThemeProvider theme={isDarkMode ? darkMode : lightMode}>
+      <CssBaseline />
+      <Box>
+        <Header toggleTheme={toggleTheme} />
+      </Box>
+    </ThemeProvider>
+  );
+}
+```
+
+**Thank you 💖**
