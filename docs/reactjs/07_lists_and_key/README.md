@@ -130,7 +130,7 @@ function App() {
 
 #### Rendering Array of Objects
 ```jsx
-function User(user) {
+function User({ user }) {
     const { name, role, expertise } = user;
 
     return (
