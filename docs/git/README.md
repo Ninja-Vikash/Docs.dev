@@ -103,4 +103,24 @@ git push -u origin main
 ```
 
 
-<!-- ### Git Commands -->
+### Git Commands
+
+Before deep diving to git commands learn the tracking flow.
+![alt text](gitTrackProcess.png)
+
+```bash
+# add all untracked files
+git add .
+```
+```bash
+# take a snapshot of tracked files with a message
+git commit -m"message"
+```
+> [!NOTE]\
+> `-m` flag is used to add commit message
+```bash
+# upload the tracked files to codebase
+git push
+```
+
+<!-- #### Branching -->
