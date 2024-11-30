@@ -81,7 +81,7 @@ As we discussed to standardize the JavaScript code ECMAScript International writ
 For the browser how they will treat the code
 `"use strict"`
 ```js
-"use script"
+"use strict"
 
 // above statement ensures that your source code will be treated as newer version of javascript
 ```
