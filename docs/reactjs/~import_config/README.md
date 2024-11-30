@@ -216,4 +216,4 @@ function About() {
 export default About;
 ```
 
-**Written With 💖!**
+**Crafted with 💖!**
