@@ -8,7 +8,7 @@ Git stores data as snapshots of the entire project, unlike traditional systems t
 
 ---
 
-**[Move to command]()⚡**
+**[Move to commands](https://github.com/Ninja-Vikash/Docs.dev/tree/main/docs/git#commands-)⚡**
 
 ### Key feature of Git
 
@@ -248,7 +248,7 @@ git push -u origin new-feature
 ![branch flow](images/gitBranchFlow.png)
 
 **Work is not over yet** 😉<br/>
-You have just pushed changes to new branch ( eg. `new-feature` ), It doest not mean all the changes will reflect to `main` branch.
+You have just pushed changes to new branch ( eg. `new-feature` ), It does not mean all the changes will reflect to `main` branch.
 
 What!<br/>
 — "*Is there any bug?*" 🥲
