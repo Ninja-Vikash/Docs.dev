@@ -185,3 +185,55 @@ Because of modifying same file at the same line
 ![confusion](confusion.png)
 
 Now somehow `User_2` pushes his change to `main` next time `User_1` will have to face conflicts.
+
+**How branching works?**<br/>
+Before creating a branch make sure you are in `main` branch. 😀
+
+```bash
+# create branch
+git branch new-feature
+
+# navigate to branch
+git checkout new-feature
+```
+Alternate
+```bash
+git checkout -b new-feature
+```
+> `-b` is a flag to create branch
+
+Check the current branch `git branch`
+
+Now you are able to make changes on newly created branch ( eg. `new-feature` ).<br/>
+Once the changes have done, you can push the changes to remote.
+
+```bash
+git add .
+
+git commit -m"change"
+
+git push -u origin new-feature
+```
+> [!WARNING]\
+> Default upstream is set to `main`
+>
+> `-u` flag is used change the upstream so that next time when you push the code from `new-feature` branch\
+> You can use the `git push` command.
+>
+> `origin` creates branch on remote for current push, if not existed.
+>
+> Alternate
+> ```bash
+> git push origin main
+> ```
+> Will push changes on remote but does not change upstream.\
+> In this case if you switch back to main branch for few changes to push directly into main.\
+> ```bash
+> # switch branch
+> git checkout main
+> 
+> # push changes from main
+> git push 
+> ```
+
+![branch flow](gitBranchFlow.png)
