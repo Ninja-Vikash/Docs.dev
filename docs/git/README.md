@@ -8,6 +8,8 @@ Git stores data as snapshots of the entire project, unlike traditional systems t
 
 ---
 
+**[Move to command]()⚡**
+
 ### Key feature of Git
 
 - **Branching**<br/>Developers can create branches to experiment with changes without affecting the main codebase.
@@ -65,7 +67,7 @@ Create an empty folder ( eg. github-demo )
 And open it with any code editor. I'm going with VS code.
 
 You can use in-built source control 😉
-![git-control](GitControl.png)
+![git-control](images/gitControl.png)
 
 **Using Git with command lines is really fun**
 
@@ -94,6 +96,13 @@ Let's initialize now!<br/>
 git init
 ```
 
+> [!IMPORTANT]\
+> `.gitignore` file will help you to ignore any file or directory from tracking
+> ```bash
+> README.md
+> package.json
+> node_modules
+> ```
 You will see, now `index.html` is tracked by git.
 
 ```bash
@@ -115,7 +124,7 @@ git push -u origin main
 ### Git Commands
 
 Before deep diving to git commands learn the tracking flow.
-![alt text](gitTrackProcess.png)
+![alt text](images/gitTrackProcess.png)
 
 ```bash
 # add all untracked files
@@ -138,7 +147,7 @@ git push
 ### Branching
 
 Before learning _branching_ 🔍 have a look on the previous code pushing flow.
-![code flow](codeFlow.png)
+![code flow](images/codeFlow.png)
 
 There will not be any complication because —<br/> "_you have only one branch that is_ `main` _branch_" 😅
 
@@ -164,13 +173,13 @@ What is the usecase of it? 🧐
 **Branch**, is like a separate copy of your local codebase, in the same local setup.
 
 When there is only one branch that is `main`, your all `commit`s will be pushed to `main`.
-![only main](onlyMain.png)
+![only main](images/onlyMain.png)
 
 **Let's discuss the usecase** 🤓<br/>
 Working in a team means multiple local setup. Which mean multiple collaborator to push code.<br/>
 But there is a problem with many collaborator.
 
-![conflict with single branch](conflict01.png)
+![conflict with single branch](images/conflict01.png)
 Here is the breakdown, `User_1` has pushed his commit before `User_2` on the `main` branch.<br/>
 But the `User_2` still in initial commit state. His local setup is not aware of changes which is done by `User_1`.
 
@@ -182,7 +191,7 @@ And already pushed to main.
 The file is changed in `main` branch. If the `User_2` pushes the change. It will show a conflict.
 
 Because of modifying same file at the same line
-![confusion](confusion.png)
+![confusion](images/confusion.png)
 
 Now somehow `User_2` pushes his change to `main` next time `User_1` will have to face conflicts.
 
@@ -236,4 +245,103 @@ git push -u origin new-feature
 > git push 
 > ```
 
-![branch flow](gitBranchFlow.png)
+![branch flow](images/gitBranchFlow.png)
+
+**Work is not over yet** 😉<br/>
+You have just pushed changes to new branch ( eg. `new-feature` ), It doest not mean all the changes will reflect to `main` branch.
+
+What!<br/>
+— "*Is there any bug?*" 🥲
+
+Because, Your `new-feature` branch is independent.<br/>
+You will have to say the remote — my branch is done with changes, you please merge it.
+
+Kidding, Just open up your repo in GitHub and raise a `pull request`. Once it merged to `main` branch your changes will reflect on `main`.
+
+> [!IMPORTANT]\
+> Once your branch is merged to `main`\
+> You will have to update your `main` branch
+> ```bash
+> # switch to main
+> git checkout main
+> 
+> # pull changes
+> git pull origin main
+> ```
+> If your upstream is not changed
+> ```bash
+> git pull
+> ```
+
+After merge your flow will be
+![alt text](images/gitMerged.png)
+
+***
+
+### Commands ⚡
+```bash
+# clone
+git clone <repository-url>
+
+# initialize
+git init
+
+# check status
+git status
+
+# add to track
+git add .
+
+# take snapshot
+git commit -m"message"
+
+# push changes
+git push
+
+# list branch
+git branch
+
+# create branch
+git branch new-feature
+
+# switch branch
+git checkout new-feature
+
+# create and switch branch
+git checkout -b new-feature
+
+# push on branch ( without modifying upstream )
+git push origin new-feature
+
+# push on branch ( with modifying upstram )
+git push -u origin new-feature
+
+# pull changes
+git pull
+
+# pull from branch
+git pull origin new-feature
+
+# check commits history
+git log
+
+# check commits name
+git log --oneline
+
+# delete a branch ( safe, ensures no unmerged changes )
+git branch -d <branch-name>
+
+# delete a branch ( forcefully )
+git branch -D <branch-name>
+
+# pluck all changes from any branch
+git stash
+
+# apply all plucked changes
+git stash apply
+
+# reset all current changes
+git reset --hard
+```
+
+**Crafted with 💖!**
