@@ -2,6 +2,7 @@
 
 Before learning about basic props, You should setup react app.
 
+#### `animate`
 ```jsx
 import { motion } from "motion/react";
 
@@ -18,6 +19,7 @@ Also, `animate` is the least prop to apply animations on motion components.
 
 But the animation ran before you switch your window, because there is no any duration set to the animation.
 
+#### `transition`
 ```jsx
 const MotionComponent = () => (
   <motion.div
@@ -33,6 +35,7 @@ Defines how should an animation animate on screen.
 
 At the same time you can provide some initial properties to your motion component using `initial` prop
 
+#### `initial`
 ```jsx
 const MotionComponent = () => (
   <motion.div
