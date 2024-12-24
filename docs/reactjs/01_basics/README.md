@@ -6,7 +6,7 @@ The *DOM* is an object representation of the HTML element, thats acts as a bridg
 ![dom image](DOM.png)
 
 #### Updating UI with JavaScript
-```js
+```html
 <body>
     <div id="app"></div>
     <script type="text/javascript">
@@ -21,7 +21,7 @@ The *DOM* is an object representation of the HTML element, thats acts as a bridg
 ```
 
 #### Handling multiple elements with JavaScript
-```js
+```html
 <body>
     <div id="app"></div>
     <script type="text/javascript">
