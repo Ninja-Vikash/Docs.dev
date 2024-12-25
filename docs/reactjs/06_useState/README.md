@@ -1,4 +1,4 @@
-## Docs.dev - useState
+## Docs.dev - `useState`
 
 ### What are hooks in React?
 Hooks in React are special functions that let you **hook into** React features like `state` and `lifecycle` methods from functional components.<br/>
