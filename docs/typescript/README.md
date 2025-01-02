@@ -76,12 +76,28 @@ const chapter: string = 198; // error
 But wait! 🤔<br/>
 Where you will execute the TypeScript file.
 
-First, TypeScript file will compile to a JavaScript file.
+_A TypeScript file can't be executed directly._
+
+First, TypeScript file will be compiled into a JavaScript file.<br />
+Then you can execute corresponding JavaScript file.
 
 ```bash
+# For compling ts file
 tsc index.ts
+
+# For executing js file
+node index.js
 ```
 
-It will generate a JavaScript file.
+> [!IMPORTANT]\
+> `tsc index.ts` will generate a JavaScript file.
+> 
+> After that you can execute it.
+
+But everytime you need to re-generate JavaScript file for every single change.
+```bash
+tsc --watch
+```
+`tsc --watch` command will do it for you 🤓!
 
 **Created with 💖!**
