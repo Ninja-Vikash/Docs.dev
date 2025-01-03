@@ -1,5 +1,9 @@
 // Array declaration
 
+let arr = [1, 2, 3, 4, null];
+
+arr.push(7);
+
 let numArr: number[] = [1, 2, 3, 4, 5];
 
 numArr.push(78); // ✅
@@ -30,3 +34,21 @@ let months: readonly string[] = [
 ];
 
 // months.push("Jan")  // Error: ❎
+
+let newArr: (number | boolean)[] = [1, 2, 3, 4, true];
+newArr.push(false);
+
+const days: readonly string[] = [
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat",
+  "Sun",
+];
+
+let data: number | string;
+data = 90;
+data = "TypeScript";
+// data = true
