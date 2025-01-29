@@ -62,7 +62,7 @@ To inject React in your project, you need two React `script`s from an external w
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
 
-#### Creating element using `React.createElement()`
+#### Create element using `React.createElement()`
 ```html
 <body>
     <div id="app"></div>
@@ -90,7 +90,7 @@ To inject React in your project, you need two React `script`s from an external w
 >
 > `React.createElement`(`"div"`, `{ className: "container" }`, `STRING` | `OTHER ELEMENT` | `ARRAY OF ELEMENTS` )
 
-#### Creating root using `ReactDOM.createRoot()`
+#### Create root using `ReactDOM.createRoot()`
 ```html
 <body>
     <div id="app"></div>
@@ -185,7 +185,7 @@ Now the `render()` method is able to display `JSX`, pass any HTML code it is rea
 > </script>
 > ```
 
-#### Rendering using a function
+#### Render `JSX` using a function
 ```html
 <body>
     <div id="app"></div>
