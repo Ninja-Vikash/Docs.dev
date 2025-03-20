@@ -137,7 +137,7 @@ export default About;
 
 No worries here is the solution.
 
-### import config
+### import `alias`
 
 ```js
 // vite.config.js

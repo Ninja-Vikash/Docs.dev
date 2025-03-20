@@ -2,9 +2,50 @@
 
 #### Scenario
 
-Imagine we are building a _theme switcher app_ where we want to pass a Theme value (e.g., `"dark"` or `"light"`) to multiple components without using `props` drilling.
+Imagine! You're building a _react application_ and want to use Theme values (e.g., `"dark"` or `"light"`) inside multiple components.<br/>
+Now, You are thinking about of props. Right? 😁
 
-Creating a context is one of the easiest thing. 😎
+Now another condition!<br/>You want to use it (theme values) in deeply nested components. 😵‍💫<br/>
+You can use here `prop` drilling.
+
+#### What is `prop` drilling?
+prop drilling is a concept of passing values to top level component to deeply nested component via props.
+
+```jsx
+// Top Level Component
+const App = () => {
+  return <User name="vikash" />
+}
+
+// Received value of name and passed further to Nested component
+const User = ({ name }) => {
+  return <UserCard name={name} />
+}
+
+// Received value of name and passed further to Nested component
+const UserCard = ({ name }) => {
+  return <CheckLoggedIn name={name} />
+}
+
+// Finally rendering name
+const CheckLoggedIn = ({ name }) => {
+  if (!name) return <p>Welcome User!</p>
+
+  return <p>Hello ${name}</p>
+}
+```
+
+The above example is just a small glance of `prop` drilling.
+
+**Don't worry!**<br/>
+We are not going to use `props` drilling.<br/>
+But in the real world projects instead of prop drilling there is a better approach to manage states.
+
+Tada `useContext` hook comes into play.
+
+### `useContext()` hook
+
+Lets create a context value. 😎
 
 ```js
 // themeContext.js

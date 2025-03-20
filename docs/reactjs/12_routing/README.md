@@ -16,7 +16,7 @@ You need to install an package for `react-router-dom`
 npm i react-router-dom
 ```
 
-Once the installation has been done, you can start writing routes.
+Once the installation has done. Now you can start setting up routes in your `App.jsx`
 
 ```jsx
 // App.jsx
