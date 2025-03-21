@@ -1,4 +1,4 @@
-## Docs.dev - React `import` configuration
+## Docs.dev - React `import` alias configuration
 
 You know importing components, methods are very easy in any text editor like vs-code. 🤓
 
