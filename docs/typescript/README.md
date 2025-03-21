@@ -40,11 +40,18 @@ const sum: number = add(1, "two"); // error
 > [NOTE]\
 > TypeScript uses compile time type checking. Which means it checks if the specified types match before running the code, not while running the code.
 
-### Installing the compiler
+### Installing TypeScript in your PC
 
 ```bash
+# as dev depenedency
 npm install typescript --save-dev
+
+# as global
+npm install -g typescript
 ```
+
+> [NOTE]\
+> Explore the latest way of executing TypeScript below.
 
 Now initialize `tsconfig.js`
 
@@ -99,5 +106,17 @@ But everytime you need to re-generate JavaScript file for every single change.
 tsc --watch
 ```
 `tsc --watch` command will do it for you 🤓!
+
+### Compiling TypeScript file directly in node environment. `new!`
+For compiling TypeScript file directly in node environment via code runner extension in vs code.
+
+```bash
+# install typescript globally
+npm install -g typescript
+
+# install ts-node globally
+npm install -g ts-node typescript
+```
+
 
 **Created with 💖!**
