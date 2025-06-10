@@ -157,7 +157,7 @@ It is used to apply inline styling on an element.
 > `<img />`, is a self closing tag.\
 > `src`, attribute is the least required attribute for an `<img />` tag.
 
-1. `src`: holds the path ( absolute / relative ) of any image.
+1. `src`: Holds the path ( absolute / relative ) of any image.
 
     ```html
     <!-- Absolute path of any image -->
@@ -177,4 +177,66 @@ It is used to apply inline styling on an element.
 
     ```html
     <img src="./cat.jpg" alt="cat image" title="This is a cat image of yawning">
+    ```
+
+4. `height` and `width`: Specifies the width and height of the image in pixels. These attributes help control the layout of the page, and specifying them can prevent the page from reflowing as the image loads.
+
+    ```html
+    <img src="./cat.jpg" height="300" />
+    ```
+
+#### `<video>` tag attributes
+
+> [!important]\
+> `<video>` tag is not a self closing tag.
+> ```html
+> <video src="./cat.mp4"></video>
+> ```
+
+1. `src`: Required attribute for `<video>` tag, which holds the path of the video.
+
+    ```html
+    <video src="./cat.mp4"></video>
+    ```
+
+2. `controls`: To add basic functionality for video controlling like - play, pause and volume.
+
+    ```html
+    <video src="./cat.mp4" controls></video>
+    ```
+
+3. `height` and `width`: Sets the width and height of the video player in pixels.
+
+    ```html
+    <video src="./cat.mp4" width="640" height="360" controls></video>
+    ```
+
+4. `autoplay`: Used to play automatically as page loads.
+
+    ```html
+    <video src="./cat.mp4" autoplay></video>
+    ```
+
+5. `loop`: Replays the video when it reaches to the end.
+
+    ```html
+    <video src="./cat.mp4" loop></video>
+    ```
+
+6. `muted`: Mutes the video.
+
+    ```html
+    <video src="./cat.mp4" muted></video>
+    ```
+
+7. `poster`: To place thumbnail for the video.
+
+    ```html
+    <video src="./cat.mp4" poster="./cat.jpg" controls></video>
+    ```
+
+8. `playinline`: Enables the video to play inline on mobile devices instead of in a full-screen mode.
+
+    ```html
+    <video src="./cat.mp4" controls playsinline></video>
     ```
