@@ -1,4 +1,4 @@
-## Docs.dev - WebPage Layout Basics
+## Docs.dev - Layouts in HTML
 
 Do you know?<br/>
 _Every website you visit has one similarity._
