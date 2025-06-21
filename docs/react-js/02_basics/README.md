@@ -9,7 +9,7 @@ To setup a react app using `vite`
 ```bash
 npm create vite@latest
 ```
-> [!NOTE]\
+> [!tip]\
 > Answer the following.
 >
 > project name : `<project-name>`
@@ -83,34 +83,37 @@ npm run dev
 - `README.md`: Documentation file that typically includes project setup instructions.
 - `vite.config.js`: Configuration file for Vite, a fast build tool and development server used in this React project.
 
-### Professional folder structure
+### `React` professional folder structure
 
-Folder structure plays a most important role in any react app.<br/>
-An organized setup will boost the productivity.
+> [!important]\
+> Building a large project is not a big deal!
+>
+> *But organizing the files your has*.
+>
+> You project structure must follow a clean approach.\
+> Folder structure plays crucial role in any project.\
+> A well organized setup will boost the productivity.
 
 **Lets go!**<br/>
-Build your ultimate folder structure
+
 ```bash
 # open src
 cd src
 
-# create folders at src
-mkdir assets components contexts data pages services utils
+# create folders inside src
+mkdir assets components contexts hooks pages services utils
 
-# create folders at components
+# create folders inside components
 cd components
 
 mkdir container ui
 
 # create folders for pages
-cd ..
-
-cd pages
+cd ../pages
 
 mkdir home about features contact error
 ```
-> [!IMPORTANT]\
-> **learn more**\
-> Checkout `project`
+
+This is just an example
 
 **Happy coding ❤️**

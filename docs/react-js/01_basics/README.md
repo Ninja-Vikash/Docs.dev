@@ -174,7 +174,7 @@ Lets include the `babel` script so that you can start writing `JSX`.
 </body>
 ```
 Now the `render()` method is able to display `JSX`, pass any HTML code it is ready to render on the screen.
-> [!NOTE]\
+> [!important]\
 > Order of scripts
 > ```js
 > <script src="react.js"></script>
@@ -204,8 +204,8 @@ Now the `render()` method is able to display `JSX`, pass any HTML code it is rea
     </script>
 </body>
 ```
-> [!NOTE]\
-> In React, you create small blocks of component.\
+> [!caution]\
+> In React, you create small components as `function`s.\
 > But inside `render()` method we do not call it as a function call.
 >
 > ```jsx

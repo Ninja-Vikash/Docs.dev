@@ -75,16 +75,19 @@ export default App;
 isUser ? <User /> : <Anonymous />; // If "true" User component will show otherwise Anonymous component
 ```
 
-> [!WARNING]\
+> [!tip]\
 > You can use traditional `if-else` statements.\
 > But inside JSX if you are using `if-else` may create error and is not a good approach.\
 > Don't use `if-else` inside `return` statement.
 >
+> Instead, the approach will look like
 > ```jsx
 > const App = () => {
 >   const [isUser, setIsUser] = useState(true);
 >
->   if (isUser) {
+>   if (!isUser) {
+>     return <Anonymous />;
+>   } else {
 >     return (
 >       <User
 >         data={{
@@ -93,13 +96,31 @@ isUser ? <User /> : <Anonymous />; // If "true" User component will show otherwi
 >         }}
 >       />
 >     );
->   } else {
->     return <Anonymous />;
 >   }
 > };
 > ```
 
-#### `Short circuit`
+#### Early return using `if` statement.
+```jsx
+const App = () => {
+  const [isUser, setIsUser] = useState(true);
+
+  if (!isUser) {
+    return <Anonymous />;
+  }
+
+  return (
+    <User
+      data={{
+        name: "Vikash",
+        role: "Software Engineer",
+      }}
+    />
+  );
+}
+```
+
+#### `Short Circuit` execution
 
 ```jsx
 const App = () => {
@@ -120,5 +141,12 @@ const App = () => {
 ```
 **Short circuit** rendering often use for single `component` rendering.<br />
 And executes the JSX if the condition is `true`.
+
+> [!tip]\
+> Short Circuit, rendering may generate some unexpected results while rendering.\
+> For safety purpose, You can use
+> ```jsx
+> {!!isUser && <User />}
+> ```
 
 **Created with 💖!**

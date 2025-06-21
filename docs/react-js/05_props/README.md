@@ -1,6 +1,6 @@
 ## Docs.dev - Props, Data flow & `children`
 
-### What is props?
+### What are props?
 *Props are used to pass data from parent to child components.*<br/>
 When it comes to render identical component with different data.
 
@@ -48,7 +48,7 @@ export default App;
 ```
 
 #### How to pass props?
-You can pass props as `attribute` alike HTML in a component.
+You can pass props as `attribute` alike HTML into a component.
 ```jsx
 function App() {
     return (
@@ -99,7 +99,7 @@ function App() {
             role="frontend-developer"
             expertize="react"
             location="jamshedpur"
-            contact="ninjacoder07@gmail.com"
+            email="ninjacoder07@gmail.com"
         />
     )
 }
@@ -108,11 +108,11 @@ Have a look on accessing the data.
 ```jsx
 function User(props) {
     return (
-        <h3>
-            I'm {props.name} and I am a {props.role}.
-            I have expertize in {props.expertize} based in {props.location}.
-            Book a meeting on {props.contact}.
-        </h3>
+        <>
+            <h3>I'm {props.name} and I am a {props.role}.</h3>
+            <h4>I've expertize in {props.expertize} based in {props.location}.</h4>
+            <h5>Book a meeting on {props.email}.</h5>
+        </>
     )
 }
 ```
@@ -122,12 +122,12 @@ Here is a solution to avoid writing props multiple times.
 `props` → is an `Object`<br/>
 Lets destruct it
 ```jsx
-function User({ name, role, expertize, location, contact }) {
+function User({ name, role, expertize, location, email }) {
     return (
         <h3>
-            I'm {name} and I am a {role}.
-            I have expertize in {expertize} based in {location}.
-            Book a meeting on {contact}.
+            <h3>I'm {name} and I am a {role}.</h3>
+            <h4>I've expertize in {expertize} based in {location}.</h4>
+            <h5>Book a meeting on {email}.</h5>
         </h3>
     )
 }
@@ -168,7 +168,7 @@ function User({ userData }) {
 ```
 
 ### Data Flow & Prop Drilling
-![data flow](DATA_FLOW.png)
+![data flow](./data-flow.png)
 
 > [!IMPORTANT]\
 > Data flows from top level component to nested level components.\

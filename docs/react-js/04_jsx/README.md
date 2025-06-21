@@ -18,7 +18,7 @@ In `JSX`, you can write HTML-like code, which makes it easier to visualize the s
 
 In essence, JSX bridges the gap between traditional HTML and JavaScript, giving developers a powerful tool to create *dynamic user interfaces*.
 
-#### Lets see how JSX works
+#### How `JSX` works?
 
 ```jsx
 import React from "react";
@@ -32,9 +32,10 @@ function App() {
 export default App;
 ```
 
-> [!WARNING]\
+> [!warning]\
 > A component must have to return `jsx`, so it should not be empty.\
-> A component is only capable of returning one element.
+> A component can return one element.
+>
 > ```jsx
 > function App() {
 >     return (
@@ -44,7 +45,7 @@ export default App;
 > }
 > ```
 >
-> Instead you can write
+> Instead, You can write.
 > ```jsx
 > function App() {
 >     return (
@@ -73,9 +74,9 @@ function App() {
 In the above component we are wrapping up the elements using another element.<br/>
 And if we see the DOM structure we will see an unwanted node.
 
-![extra node](EXTRANODE.png)
+![extra node](./extranode.png)
 
-In react we write *Fragments* as empty tags `<>Docs.dev</>`.
+In react we write *Fragments* as empty tags --> `<>Docs.dev</>`.
 ```jsx
 function App() {
     return (
@@ -88,7 +89,7 @@ function App() {
 ```
 Fragments don't create any additional node in DOM.
 
-### Difference between `JSX` & `HTML`
+### What is the difference between `JSX` & `HTML`?
 
 JSX provides the facility of writing logic with structure.
 ```html
@@ -122,4 +123,4 @@ function App() {
 >
 > We can call `function`s and use the variables as well. 🤩
 
-**Happy coding ❤️**
+**Happy Coding ❤️!**
