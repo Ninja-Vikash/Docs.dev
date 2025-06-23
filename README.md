@@ -5,7 +5,7 @@
 **Built on experiences!**<br/>
 
 You'll always find something?<br/>
-Whether you're a *beginner* or an *experienced* developer, **Docs.dev** has something for everyone. 🤩
+Whether you're an absolute *beginner* or an *experienced* developer, **Docs.dev** has something for everyone. 🤩
 
 > [!tip]\
 > **Docs.dev** is open source.\
