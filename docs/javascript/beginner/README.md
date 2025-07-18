@@ -1,4 +1,4 @@
-## Docs.dev - JavaScript basics
+## Docs.dev - JavaScript Beginner
 
 In JavaScript, We print values using `console`
 ```js
